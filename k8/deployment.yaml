@@ -18,6 +18,6 @@ spec:
     containers:
     - name: myweb
       imagePullPolicy: Always
-      image: abhishekraics001/myfirstdockerimage01
+      image: abhishekraics001/appimage:v1
       ports:
         - containerPort: 80
