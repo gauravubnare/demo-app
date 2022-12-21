@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: mydeployment
+spec:
+ strategy:
+   type: RollingUpdate
+ replicas: 2
+ selector:
+   matchLabels:
+     app: frontend
+ template:
+   metadata:
+    name: myPod
+    labels:
+      app: frontend
+   spec:
+    containers:
+    - name: myweb
+      imagePullPolicy: Always
+      image: abhishekraics001/myfirstdockerimage01
+      ports:
+        - containerPort: 80
